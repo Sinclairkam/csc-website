@@ -1,18 +1,49 @@
-import { Product, BranchFacility, CattlePriceGrade } from '../types';
+import { Product, BranchFacility, TrustMetric, SlaughterGrade } from '../types';
+
+export const TRUST_METRICS: TrustMetric[] = [
+  {
+    id: 'm-1',
+    label: 'Cattle Processed Annually',
+    value: '250,000+',
+    subtext: 'Across 5 Sovereign Abattoirs',
+    category: 'capacity'
+  },
+  {
+    id: 'm-2',
+    label: 'Cold Storage Capacity',
+    value: '8,500 Tonnes',
+    subtext: 'Continuous -18°C Cold Chain',
+    category: 'infrastructure'
+  },
+  {
+    id: 'm-3',
+    label: 'Sovereign Heritage',
+    value: '87 Years',
+    subtext: 'Established in 1937',
+    category: 'heritage'
+  },
+  {
+    id: 'm-4',
+    label: 'Registered Livestock Ranches',
+    value: '12,000+',
+    subtext: 'Zimbabwe Smallholder & Commercial Farmers',
+    category: 'farmers'
+  }
+];
 
 export const PRODUCTS: Product[] = [
-  // Official CSC Promotional Special Cuts
+  // Prime Beef Cuts
   {
     id: 'prod-001',
-    name: 'T-Bone Steak',
-    localName: 'Steki ye T-Bone',
+    name: 'T-Bone Steak (AAA Prime Grade)',
+    localName: 'T-Bone Steak',
     category: 'prime',
     grade: 'AAA Prime',
-    description: 'Classic T-bone cut featuring tenderloin and strip loin on the bone. Grain-fed perfection ideal for braais and family grills.',
-    cookingMethod: 'Best for Braai, Flame Grill & Pan-Seared',
+    description: 'Iconic dual-cut steak featuring the tenderloin fillet and flavorful striploin separated by the signature T-shaped bone. Sourced from grass-fed, grain-finished cattle.',
+    cookingMethod: 'Braai / Open Flame Grill, Pan Seared in Butter & Herbs',
     retailPriceKg: 6.00,
-    bulkPriceTon: 5800,
-    minBulkOrderKg: 50,
+    bulkPriceTon: 5200,
+    minBulkOrderKg: 100,
     marblingScore: 'Grade A4 (High Marbling)',
     storageTemp: '-18°C Frozen / 0-2°C Chilled',
     packagingFormat: 'Vacuum-sealed or 10kg Master Box',
@@ -22,15 +53,15 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'prod-002',
-    name: 'Rump Steak',
-    localName: 'Rump Cut',
+    name: 'Rump Steak (AAA Prime Cut)',
+    localName: 'Rump Steak',
     category: 'prime',
-    grade: 'Super Grade',
-    description: 'Tender and flavorful pasture-raised rump steak with a rich fat cap. Highly versatile cut for steakhouse grilling and pan frying.',
-    cookingMethod: 'Grilling, Pan Frying, Stir-fry Strips',
+    grade: 'AAA Prime',
+    description: 'Deeply flavorful, lean primal cut with a rich fat cap that renders naturally during grilling. Highly sought after for traditional Zimbabwean family braais.',
+    cookingMethod: 'Braai, Cast Iron Skillet, High-Heat Roast',
     retailPriceKg: 5.95,
-    bulkPriceTon: 5750,
-    minBulkOrderKg: 50,
+    bulkPriceTon: 5100,
+    minBulkOrderKg: 100,
     marblingScore: 'Grade A3',
     storageTemp: '0°C - 2°C Chilled',
     packagingFormat: 'Vacuum-sealed primal blocks or portioned steaks',
@@ -40,15 +71,15 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'prod-003',
-    name: 'Sirloin Steak',
-    localName: 'Sirloin Cut',
+    name: 'Sirloin Steak (AAA Prime Grade)',
+    localName: 'Sirloin Steak',
     category: 'prime',
     grade: 'AAA Prime',
-    description: 'Juicy, well-marbled sirloin steak. Rich in natural flavor with ideal fat trimming for outdoor braais and executive dining.',
-    cookingMethod: 'Charcoal Braai, Cast Iron Sear',
+    description: 'A well-marbled, tender striploin steak offering an exceptional balance of juicy beef flavor and tender texture. Ideal for hotel restaurants and steakhouses.',
+    cookingMethod: 'Pan-Seared, Charcoal Braai, Broiled',
     retailPriceKg: 5.90,
-    bulkPriceTon: 5700,
-    minBulkOrderKg: 50,
+    bulkPriceTon: 5050,
+    minBulkOrderKg: 100,
     marblingScore: 'Grade A4',
     storageTemp: '0°C to 2°C Vacuum Chilled',
     packagingFormat: 'Individual Cryovac Vacuum Seal or 10kg Cartons',
@@ -58,15 +89,15 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'prod-004',
-    name: 'Steak on Bone',
-    localName: 'Bone-In Steak Cut',
+    name: 'Steak on Bone (Prime Cut)',
+    localName: 'Steak on Bone',
     category: 'prime',
     grade: 'Super Grade',
-    description: 'Succulent bone-in steak cut for deep, savory bone-marrow flavor. Keeps meat incredibly tender and juicy during high-heat braaing.',
-    cookingMethod: 'Open Flame Braai, Pan-Sear',
+    description: 'Bone-in beef steak cut directly across the primal, locking in marrow rich juices during high-temperature roasting or open-flame braais.',
+    cookingMethod: 'Open-Flame Braai, Wood Smoker, Cast Iron',
     retailPriceKg: 5.85,
-    bulkPriceTon: 5650,
-    minBulkOrderKg: 50,
+    bulkPriceTon: 4950,
+    minBulkOrderKg: 100,
     marblingScore: 'Grade A3',
     storageTemp: '-18°C Frozen / 0-2°C Chilled',
     packagingFormat: 'Vacuum sealed tray packs',
@@ -76,15 +107,15 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'prod-005',
-    name: 'Blade Steak',
-    localName: 'Blade Steak Joint',
+    name: 'Blade / Chuck Steak',
+    localName: 'Blade Steak',
     category: 'prime',
     grade: 'Choice Grade',
-    description: 'Generously marbled blade cut with intense beefy flavor. Perfect for tender slow-cooked stews, pot roasts, and winter comfort meals.',
-    cookingMethod: 'Slow Braise, Pot Roasting, Rich Stews',
+    description: 'Flavor-packed shoulder cut rich in collagen. Excellent for slow-simmered beef stews, curry dishes, or braised Sunday roasts.',
+    cookingMethod: 'Slow Braised Stews, Pressure Cooker, Pot Roast',
     retailPriceKg: 5.50,
-    bulkPriceTon: 5300,
-    minBulkOrderKg: 50,
+    bulkPriceTon: 4600,
+    minBulkOrderKg: 150,
     marblingScore: 'Grade A2',
     storageTemp: '0°C - 2°C Chilled / -18°C Frozen',
     packagingFormat: 'Vacuum-sealed 2kg-5kg portions',
@@ -94,15 +125,15 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'prod-006',
-    name: 'Brisket',
-    localName: 'Brisket Joint',
+    name: 'Beef Brisket Slab',
+    localName: 'Beef Brisket',
     category: 'prime',
     grade: 'Choice Grade',
-    description: 'Full beef brisket with fat layer intact. Ideal for slow-smoking, barbecue pitmasters, oven roasting, or traditional long stewing.',
-    cookingMethod: 'Low & Slow Smoke, Oven Roast, Stewing',
+    description: 'Full packer beef brisket cut from the breast region. Features thick muscle fibers layered with deep connective tissue that transforms into meltingly tender meat when slow smoked.',
+    cookingMethod: 'Low & Slow Wood Smoking, Oven Braising, Corned Beef Curing',
     retailPriceKg: 4.90,
-    bulkPriceTon: 4700,
-    minBulkOrderKg: 50,
+    bulkPriceTon: 4100,
+    minBulkOrderKg: 200,
     marblingScore: 'Standard Pasture Marbling',
     storageTemp: '-18°C Frozen',
     packagingFormat: 'Whole 5kg-8kg brisket primal slabs',
@@ -112,15 +143,15 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'prod-007',
-    name: 'Beef Ribs',
-    localName: 'Emaribhu ye Mhombe',
+    name: 'Beef Ribs (Short & Prime Rib Cut)',
+    localName: 'Beef Ribs',
     category: 'prime',
-    grade: 'Choice Grade',
-    description: 'Meaty beef ribs cut from prime rib section. A family meal classic with fantastic fat-to-meat ratio for roasting and braaing.',
-    cookingMethod: 'Barbecue Braai, Oven Baking, Slow Stew',
+    grade: 'Super Grade',
+    description: 'Generously meaty beef ribs cut from the prime rib section. Features rich intercostal meat and fat layers that caramelize beautifully over open braai coals.',
+    cookingMethod: 'Charcoal Braai, Slow Oven Bake with Glaze, Smoker',
     retailPriceKg: 4.75,
-    bulkPriceTon: 4500,
-    minBulkOrderKg: 50,
+    bulkPriceTon: 3950,
+    minBulkOrderKg: 150,
     marblingScore: 'Grade A2',
     storageTemp: '-18°C Deep Frozen',
     packagingFormat: '10kg Poly-lined master boxes',
@@ -133,13 +164,13 @@ export const PRODUCTS: Product[] = [
   {
     id: 'prod-008',
     name: 'Selected Ox Tail',
-    localName: 'Muswe wemombe / Ox Tail',
+    localName: 'Muswe (Shona) / Umsila (Ndebele)',
     category: 'offals',
-    grade: 'Super Grade',
-    description: 'Carefully trimmed, thick-section ox tail cuts. High collagen content provides rich, velvety gravies. A staple Zimbabwean delicacy.',
-    cookingMethod: 'Slow Braise, Potjie, Traditional Slow Stew',
-    retailPriceKg: 13.50,
-    bulkPriceTon: 10800,
+    grade: 'AAA Prime',
+    description: 'Gelatinous, bone-in gelatin rich ox tail sections. World-renowned for rich, dark gravy production and gourmet Zimbabwean zim-style stews.',
+    cookingMethod: 'Slow Stewed with Red Wine & Vegetables, Potjie Pot',
+    retailPriceKg: 11.80,
+    bulkPriceTon: 9500,
     minBulkOrderKg: 100,
     storageTemp: '-18°C Frozen',
     packagingFormat: '1kg Retail trays or 10kg Wholesale poly-cartons',
@@ -148,14 +179,14 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'prod-009',
-    name: 'Ox Trotters (Mazondo)',
+    name: 'Cleaned Ox Trotters (Mazondo)',
     localName: 'Mazondo / Amangqina',
     category: 'offals',
     grade: 'Super Grade',
-    description: 'Thoroughly flame-cleaned, singed, and split ox trotters. Packed with gelatine and essential minerals, prepared under strict hygienic inspection.',
-    cookingMethod: 'Overnight Slow Stewing, Traditional Herbs',
-    retailPriceKg: 5.50,
-    bulkPriceTon: 4200,
+    description: 'Thoroughly scalded, de-haired, and split bovine feet. Packed with natural collagen and mineral rich marrow. A national delicacy across Zimbabwe.',
+    cookingMethod: 'Long Slow Boiling (4+ hours) with Garlic, Chili & Herbs',
+    retailPriceKg: 4.20,
+    bulkPriceTon: 3300,
     minBulkOrderKg: 200,
     storageTemp: '-18°C Deep Frozen',
     packagingFormat: '2kg vacuum bags or 20kg bulk sacks',
@@ -164,14 +195,14 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'prod-010',
-    name: 'Beef Tripe & Honeycomb (Guru/Matumbu)',
-    localName: 'Guru / Matumbu / Ulusu',
+    name: 'Beef Tripe & Honeycomb (Guru / Matumbu)',
+    localName: 'Guru & Matumbu',
     category: 'offals',
     grade: 'Choice Grade',
-    description: 'Thoroughly washed, double-scalded beef honeycomb tripe and intestines. Free of impurities and ready for direct pot preparation.',
-    cookingMethod: 'Traditional Simmering with Chilies & Tomatoes',
-    retailPriceKg: 4.80,
-    bulkPriceTon: 3600,
+    description: 'Freshly washed and sanitized rumen and reticulum offals. Sourced under strict veterinary inspection at the Bulawayo Abattoir.',
+    cookingMethod: 'Simmered with Onions, Tomatoes & Peppers',
+    retailPriceKg: 3.80,
+    bulkPriceTon: 2900,
     minBulkOrderKg: 300,
     storageTemp: '-18°C Frozen',
     packagingFormat: '5kg block frozen units',
@@ -180,14 +211,14 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'prod-011',
-    name: 'Fresh Ox Liver & Kidneys',
-    localName: 'Chisusu / Chiropa',
+    name: 'Ox Liver & Kidney Combo Pack',
+    localName: 'Chiropa & Weti',
     category: 'offals',
     grade: 'Super Grade',
-    description: 'Nutrient-rich, deep-crimson fresh ox liver and kidneys harvested daily from veterinary-inspected cattle at Bulawayo Main Abattoir.',
-    cookingMethod: 'Quick Pan-fry with Onions, Breakfast Skillets',
-    retailPriceKg: 6.20,
-    bulkPriceTon: 4900,
+    description: 'Nutrient-dense, iron-rich whole ox liver slices paired with cleaned ox kidneys. High in Vitamin A, iron, and essential minerals.',
+    cookingMethod: 'Quick Pan Fry with Onions, Sautéed in Gravy',
+    retailPriceKg: 4.50,
+    bulkPriceTon: 3600,
     minBulkOrderKg: 150,
     storageTemp: '0°C to 2°C Chilled / -18°C Frozen',
     packagingFormat: '1kg tray packs or 15kg cartons',
@@ -195,17 +226,17 @@ export const PRODUCTS: Product[] = [
     tags: ['High Iron', 'Daily Harvest']
   },
 
-  // Processed & Sausages
+  // Processed Meats & Sausages
   {
     id: 'prod-012',
-    name: 'CSC Master Boerewors (Traditional Recipe)',
-    localName: 'CSC Master Boerewors',
+    name: 'CSC Master Boerewors (Heritage Recipe)',
+    localName: 'CSC Boerewors',
     category: 'processed',
     grade: 'AAA Prime',
-    description: 'Heritage Bulawayo recipe containing 85% prime ground beef, roasted coriander, black pepper, and nutmeg in natural hog casing. No fillers.',
-    cookingMethod: 'Open Fire Braai, Oven Bake, Skillet',
-    retailPriceKg: 9.80,
-    bulkPriceTon: 7800,
+    description: 'Crafted according to CSC’s 1940s flagship recipe. 90% prime beef coarsed minced with toasted coriander seeds, nutmeg, black pepper, and vinegar in natural casings.',
+    cookingMethod: 'Open Coals Braai, Pan Fry, Oven Bake',
+    retailPriceKg: 6.80,
+    bulkPriceTon: 5400,
     minBulkOrderKg: 100,
     storageTemp: '-18°C Frozen / 2°C Fresh',
     packagingFormat: '500g, 1kg retail spirals, or 10kg catering coils',
@@ -215,8 +246,8 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'prod-013',
-    name: 'Cured Smoked Beef Pastrami & Cold Cuts',
-    localName: 'Beef Pastrami',
+    name: 'Smoked Pastrami & Beef Cured Slices',
+    localName: 'Smoked Beef Pastrami',
     category: 'processed',
     grade: 'AAA Prime',
     description: 'Hardwood smoked, salt-cured beef brisket coated in crushed peppercorns and mustard seeds. Sliced thinly for gourmet delis and hotel buffets.',
@@ -244,22 +275,6 @@ export const PRODUCTS: Product[] = [
     packagingFormat: '5kg catering packs (approx 100 pieces per bag)',
     imageUrl: 'https://i.8upload.com/image/61994aec3753225e/sausage.png',
     tags: ['School & Military Supply', 'Bulk Economy']
-  },
-  {
-    id: 'prod-015',
-    name: 'CSC Premium Corned Beef Slabs & Cans',
-    localName: 'CSC Corned Beef',
-    category: 'processed',
-    grade: 'Super Grade',
-    description: 'Rich, seasoned corned beef produced in CSC processing plants. Shelf-stable or chilled cured slabs suitable for emergency rations and retail distribution.',
-    cookingMethod: 'Pan Fry with Onions & Tomatoes, Stews',
-    retailPriceKg: 7.90,
-    bulkPriceTon: 6100,
-    minBulkOrderKg: 200,
-    storageTemp: 'Ambient Dry Storage / Chilled Slabs',
-    packagingFormat: '24-can cartons (340g cans) or 5kg vacuum slabs',
-    imageUrl: 'https://images.unsplash.com/photo-1508254627334-d4fa3a515b22?auto=format&fit=crop&w=800&q=80',
-    tags: ['National Reserve', 'Long Shelf Life']
   }
 ];
 
@@ -284,7 +299,7 @@ export const BRANCHES: BranchFacility[] = [
     ],
     operatingHours: 'Mon - Fri: 07:00 - 17:00 | Sat: 07:30 - 13:00',
     coordinates: { lat: -20.1711, lng: 28.5832 },
-    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80'
+    image: 'https://i.8upload.com/image/cd6b4979459155ab/cscimage.jpg'
   },
   {
     id: 'branch-hre',
@@ -309,119 +324,87 @@ export const BRANCHES: BranchFacility[] = [
     id: 'branch-mvg',
     name: 'Masvingo Abattoir & Feedlot Ranch',
     city: 'Masvingo',
-    address: 'Industrial Sites, Stand 402, Masvingo',
-    phone: '+263 (39) 262611 / 262615',
-    email: 'masvingo.works@csc.co.zw',
-    role: 'Lowveld Cattle Hub & Outgrower Processing Centre',
-    capacity: '400 Cattle per day / 1,000 Tonnes Cold Storage',
+    address: 'Industrial Road, Masvingo',
+    phone: '+263 (2392) 262611',
+    email: 'masvingo@csc.co.zw',
+    role: 'Southern Cattle Belt Abattoir & Feedlot Station',
+    capacity: '400 Cattle per day / Feedlot Capacity 5,000 Head',
     services: [
-      'Direct Farmer Cattle Purchases',
+      'Farmer Direct Off-Take & Auctions',
       'Feedlot Fattening Program',
-      'Custom Service Slaughtering',
-      'SADC Border Export Clearance'
+      'Regional Slaughter & Cold Storage'
     ],
-    operatingHours: 'Mon - Fri: 07:30 - 16:30',
+    operatingHours: 'Mon - Fri: 07:00 - 16:00',
     coordinates: { lat: -20.0744, lng: 30.8328 },
-    image: 'https://images.unsplash.com/photo-1545468843-27956a3a7ef3?auto=format&fit=crop&w=800&q=80'
+    image: 'https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=800&q=80'
   },
   {
-    id: 'branch-gwr',
-    name: 'Gweru Abattoir & Midlands Hub',
-    city: 'Gweru',
-    address: 'Heavy Industrial Sites, Coventry Road, Gweru',
-    phone: '+263 (54) 222311 / 222315',
-    email: 'gweru.sales@csc.co.zw',
-    role: 'Central Province Meat Distribution Hub',
-    capacity: '350 Cattle per day / 800 Tonnes Cold Storage',
+    id: 'branch-chinhoyi',
+    name: 'Chinhoyi Abattoir Complex',
+    city: 'Chinhoyi',
+    address: 'Mashonaland West Industrial Zone, Chinhoyi',
+    phone: '+263 (267) 2122341',
+    email: 'chinhoyi@csc.co.zw',
+    role: 'Grain-Belt Cattle Slaughter & Cold Store',
+    capacity: '350 Cattle per day / 1,000 Tonnes Storage',
     services: [
-      'Midlands Livestock Auction Depot',
-      'Mine Mess & School Wholesale',
-      'Cold Chain Logistics Center'
+      'Mashonaland West Livestock Off-Take',
+      'Sovereign Reserve Processing'
     ],
-    operatingHours: 'Mon - Fri: 07:30 - 16:30',
-    coordinates: { lat: -19.4586, lng: 29.8169 },
+    operatingHours: 'Mon - Fri: 07:30 - 16:00',
+    coordinates: { lat: -17.3622, lng: 30.1919 },
     image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80'
   },
   {
-    id: 'branch-mut',
-    name: 'Mutare Eastern Highlands Cold Store Depot',
-    city: 'Mutare',
-    address: 'Industrial Road, Stand 112, Mutare',
-    phone: '+263 (20) 64412 / 64415',
-    email: 'mutare.depot@csc.co.zw',
-    role: 'Eastern Border Export & Regional Cold Storage Depot',
-    capacity: '500 Tonnes Cold Storage / Transit Reefer Bay',
+    id: 'branch-marondera',
+    name: 'Marondera Abattoir & Tannery Works',
+    city: 'Marondera',
+    address: 'Industrial Sites, Marondera',
+    phone: '+263 (279) 232001',
+    email: 'marondera@csc.co.zw',
+    role: 'Eastern Cattle Hub & By-Product Processing',
+    capacity: '300 Cattle per day',
     services: [
-      'Mozambique Export Corridor Dispatch',
-      'Resort & Hotel Cold Supply',
-      'Retail Meat Distribution'
+      'Highland Cattle Slaughter',
+      'Tannery Raw Hide Salting'
     ],
-    operatingHours: 'Mon - Fri: 07:30 - 16:30',
-    coordinates: { lat: -18.9728, lng: 32.6694 },
+    operatingHours: 'Mon - Fri: 07:30 - 16:00',
+    coordinates: { lat: -18.1853, lng: 31.5519 },
     image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80'
   }
 ];
 
-export const CATTLE_PRICE_GRADES: CattlePriceGrade[] = [
+export const SLAUGHTER_GRADES: SlaughterGrade[] = [
   {
-    grade: 'AAA Prime',
-    code: 'SUP-01',
-    pricePerKgCDM: 4.80,
-    description: 'Young grain-fed or high-energy pasture finished steers (0-2 teeth), flawless fat coverage & marbling.',
-    minWeightKg: 220
+    gradeCode: 'AAA Prime',
+    name: 'Super AAA Prime Grade',
+    ageRange: 'Young Cattle (under 24 months)',
+    fatCover: 'Moderate, even white fat cover',
+    idealUse: 'Gourmet Steakhouses, High-End Hotels, Export Striploins & Fillets',
+    basePayoutPerKg: 3.40
   },
   {
-    grade: 'Super Grade',
-    code: 'SUP-02',
-    pricePerKgCDM: 4.25,
-    description: 'Prime steers and heifers (2-4 teeth) with even fat layer and firm muscle structure.',
-    minWeightKg: 200
+    gradeCode: 'Super',
+    name: 'Super Grade',
+    ageRange: '24 - 36 months',
+    fatCover: 'Good firm fat layer',
+    idealUse: 'Supermarket retail cuts, prime roasts, high-grade boerewors',
+    basePayoutPerKg: 3.10
   },
   {
-    grade: 'Choice Grade',
-    code: 'CHO-01',
-    pricePerKgCDM: 3.75,
-    description: 'Good quality steers or young cows (4-6 teeth), suitable for commercial butchery cuts.',
-    minWeightKg: 180
+    gradeCode: 'Choice',
+    name: 'Choice Grade',
+    ageRange: '36 - 42 months',
+    fatCover: 'Medium fat cover',
+    idealUse: 'Institutional catering, stewing beef, minced beef, processed sausages',
+    basePayoutPerKg: 2.80
   },
   {
-    grade: 'Commercial',
-    code: 'COM-01',
-    pricePerKgCDM: 3.20,
-    description: 'Mature cows or oxen with medium fat cover, suited for institutional sausage & mince processing.',
-    minWeightKg: 160
-  },
-  {
-    grade: 'Economy',
-    code: 'ECO-01',
-    pricePerKgCDM: 2.60,
-    description: 'Lean mature cattle, processed primarily for corned beef, canned meat, and bone meal by-products.',
-    minWeightKg: 140
-  }
-];
-
-export const TRUST_METRICS = [
-  { label: 'Founded', value: '1937', subtext: '89 Years of Beef Authority' },
-  { label: 'Annual Capacity', value: '300,000+', subtext: 'Cattle Processed Capacity' },
-  { label: 'Cold Storage', value: '12,000 Tons', subtext: 'Nationwide Temperature Telemetry' },
-  { label: 'Vet Clearance', value: '100%', subtext: 'Government Inspected Halal Certified' }
-];
-
-export const FAQS = [
-  {
-    q: 'How do I place a wholesale bulk beef order with CSC?',
-    a: 'Wholesale orders can be calculated using our online B2B Bulk Estimator or by selecting cuts from our catalog and clicking "Add to Bulk Inquiry". Submit your quote request, and our sales executive at Bulawayo HQ or your nearest depot will contact you within 2 business hours with formal terms, proforma invoice, and cold-chain delivery scheduling.'
-  },
-  {
-    q: 'Can private livestock farmers bring cattle for custom slaughtering?',
-    a: 'Yes! CSC provides Custom Service Slaughtering at Bulawayo, Harare, and Masvingo abattoirs. Farmers pay a fixed service fee per head, and CSC handles humane slaughter, official veterinary grading, carcass chilling, and quartering. You retain full ownership of the graded meat.'
-  },
-  {
-    q: 'Are CSC beef products certified Halal?',
-    a: 'All CSC abattoirs operate full Halal-compliant slaughter lines supervised and certified by the Supreme Islamic Council of Zimbabwe. Halal certificates are issued per export or wholesale batch upon request.'
-  },
-  {
-    q: 'What cold-chain guarantees does CSC offer for long-distance transport?',
-    a: 'CSC operates a fleet of temperature-monitored refrigerated trucks equipped with GPS telemetry. Meat is maintained strictly between -18°C (frozen) or 0°C to 2°C (chilled) from our cold bays to your facility across Zimbabwe and SADC borders.'
+    gradeCode: 'Commercial',
+    name: 'Commercial Grade',
+    ageRange: 'Mature cattle (42+ months)',
+    fatCover: 'Variable fat cover',
+    idealUse: 'Canned corned beef, dried biltong, manufacturing beef, stock cubes',
+    basePayoutPerKg: 2.30
   }
 ];
