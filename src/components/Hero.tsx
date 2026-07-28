@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, ShieldCheck, Truck, ArrowRight, Building2, Scale, FileText, CheckCircle2, ChevronRight } from 'lucide-react';
+import { Award, ShieldCheck, Truck, ArrowRight, Building2, Scale, FileText } from 'lucide-react';
 import { TRUST_METRICS } from '../data/mockData';
 
 interface HeroProps {
@@ -112,7 +112,7 @@ export const Hero: React.FC<HeroProps> = ({
               {/* Photo & Quick Info */}
               <div className="relative rounded-lg overflow-hidden h-44 bg-slate-950 border border-slate-800 group">
                 <img
-                  src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80"
+                  src="https://i.8upload.com/image/cd6b4979459155ab/cscimage.jpg"
                   alt="Bulawayo HQ Cold Storage Processing Plant"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
