@@ -1,0 +1,6 @@
+{
+  "name": "Cold Storage Company Ltd (CSC)",
+  "description": "Zimbabwe's premier state-backed livestock processor and beef producer web application featuring wholesale ordering, cut catalog, farmer portal, and facility locator.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
